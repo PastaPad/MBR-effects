@@ -5,7 +5,6 @@ mov es, bx
 mov ax, 0x13
 int 0x10
 v1:
-	mov di, 10
 	call print
 print:								
     push ax
