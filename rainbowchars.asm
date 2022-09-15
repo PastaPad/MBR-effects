@@ -5,19 +5,19 @@ mov es, bx
 mov ax, 0x13
 int 0x10
 v1:
-	call print
+    call print
 print:								
     push ax
-	cld
+    cld
 v2:
     jge elp
     inc al
 elp:
-	call printchar
+    call printchar
     add dx, si
     stosb
     inc dx
-	jnz v2
+    jnz v2
     inc bl
     jnz v2
     inc di
