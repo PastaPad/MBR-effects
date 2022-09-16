@@ -1,4 +1,4 @@
-bits 16
+bits 16 ;using 16 bit
 org 0x7c00
 mov bx, 0xa000
 mov es, bx
@@ -8,7 +8,7 @@ v2:
     jge elp
     inc al
 elp:
-    call printchar
+    call printchar 
     stosb
     dec dx
     jnz v2
@@ -20,4 +20,4 @@ printchar:
     int 0x10
     ret	
 times 510-$+$$ db 0
-dw 0xAA55
+dw 0xAA55 ;boot signature
