@@ -5,18 +5,16 @@ mov es, bx
 mov ax, 0x13
 int 0x10
 v1:
-    xor ax, si
-    inc cl
+    mov ax, si
 v2:
     jge elp
     inc al
 elp:
-    add dx, si
     stosb
-    inc dx
+    dec dx
     jnz v1
     inc si
     jnz v2
-
+	
 times 510-$+$$ db 0
 dw 0xAA55
